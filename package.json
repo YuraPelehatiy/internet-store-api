@@ -2,10 +2,28 @@
   "name": "internet-store-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b",
+    "start": "npm run build && node ./build/index.js",
+    "dev": "NODE_ENV=development npm run start",
+    "prettier:base": "prettier --parser typescript --single-quote",
+    "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
+    "precommit": "npm run prettier:write"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.5",
+    "eslint": "^6.6.0",
+    "husky": "^3.0.9",
+    "prettier": "^1.18.2",
+    "tslint": "^6.0.0-beta0",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "fastify": "^2.10.0"
+  }
 }
