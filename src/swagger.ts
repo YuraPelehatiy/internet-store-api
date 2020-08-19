@@ -1,4 +1,3 @@
-
 export const swagger = {
   swagger: {
     info: {
