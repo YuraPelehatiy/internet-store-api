@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc -b",
-    "start": "npm run build && node ./build/index.js",
+    "build": "tsc -b -w",
+    "start": "nodemon ./build/index.js",
     "dev": "NODE_ENV=development npm run start",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
@@ -15,15 +15,25 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/jwt-simple": "^0.5.33",
     "@types/node": "^12.12.5",
+    "@zerollup/ts-transform-paths": "^1.7.9",
     "eslint": "^6.6.0",
     "husky": "^3.0.9",
+    "nodemon": "^2.0.2",
     "prettier": "^1.18.2",
     "tslint": "^6.0.0-beta0",
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "fastify": "^2.10.0"
+    "bcrypt": "^3.0.7",
+    "fastify": "^2.10.0",
+    "fastify-jwt": "^1.2.1",
+    "fastify-oas": "^2.5.0",
+    "jwt-simple": "^0.5.6",
+    "knex": "^0.20.2",
+    "pg": "^7.14.0"
   }
 }
